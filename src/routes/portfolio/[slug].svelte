@@ -2,18 +2,19 @@
     export async function preload({ params }) {
         // the `slug` parameter is available because
         // this file is called [slug].svelte
-        const res = await this.fetch(`blog/${params.slug}.json`);
+        const res = await this.fetch(`portfolio/${params.slug}.json`);
         const data = await res.json();
 
         if (res.status === 200) {
             return { post: data };
-        } else {
-            this.error(res.status, data.message);
         }
+
+        this.error(res.status, data.message);
     }
 </script>
 
 <script lang="ts">
+    import Section from "../../components/Section.svelte";
     export let post: { slug: string; title: string; html: any };
 </script>
 
@@ -21,11 +22,13 @@
     <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<Section>
+    <h1>{post.title}</h1>
 
-<div class="content">
-    {@html post.html}
-</div>
+    <div class="content">
+        {@html post.html}
+    </div>
+</Section>
 
 <style>
     /*
