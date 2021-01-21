@@ -90,7 +90,7 @@ const works = [
 
     {
         title: "How can I get involved?",
-        slug: "how-can-i-get-involved",
+        slug: "how-can-get-involved",
         height: Math.floor(Math.random() * 200) + 400,
         html: `
             <p>We're so glad you asked! Come on over to the <a href='https://github.com/sveltejs/svelte'>Svelte</a> and <a href='https://github.com/sveltejs/sapper'>Sapper</a> repos, and join us in the <a href='https://svelte.dev/chat'>Discord chatroom</a>. Everyone is welcome, especially you!</p>
