@@ -60,15 +60,9 @@
 </Section>
 
 <style lang="postcss">
-    @screen md {
-        .gallery {
-            columns: 2;
-        }
-    }
-
     @screen lg {
         .gallery {
-            columns: 3;
+            columns: 2;
         }
     }
 

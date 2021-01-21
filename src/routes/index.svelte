@@ -19,9 +19,7 @@
                             </defs>
                             <rect fill="url(#e77df901-b9d7-4b9b-822e-16b2d410795b)" width="52" height="24" />
                         </svg>
-                    </span>
-
-                    <span>Get a fully functional MVP built in matter of weeks.</span>
+                    </span>Get a fully functional MVP built in matter of weeks.
                 </h2>
 
                 <p class="text-base text-gray-700 md:text-lg">
