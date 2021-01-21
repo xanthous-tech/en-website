@@ -1,6 +1,6 @@
-# X-Grid
+# X-Tech Website
 
-An extremely fast data grid built with Svelte.
+Built with Svelte.
 
 # License
 
