@@ -1,15 +1,19 @@
+<script context="module" lang="ts">
+    export function preload() {
+        return this.fetch(`portfolio.json`)
+            .then((r: { json: () => any }) => r.json())
+            .then((works: { slug: string; title: string; html: any; height: number }[]) => ({
+                works,
+            }));
+    }
+</script>
+
 <script lang="ts">
-    import Section from "../components/Section.svelte";
+    import Section from "../../components/Section.svelte";
 
-    let hovered: null | number = null;
+    let hovered: null | string = null;
 
-    const works = Array(6)
-        .fill(null)
-        .map((_, idx) => ({
-            id: idx,
-            height: Math.floor(Math.random() * 200) + 400,
-            title: "Random Title",
-        }));
+    export let works: { slug: string; title: string; height: number; html: any }[];
 </script>
 
 <svelte:head>
@@ -30,11 +34,15 @@
         {#each works as work}
             <div
                 on:mouseleave={() => (hovered = null)}
-                on:mouseenter={() => (hovered = work.id)}
+                on:mouseenter={() => (hovered = work.slug)}
                 class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer"
                 style="height: {work.height}px; background-image: url('https://source.unsplash.com/random/{work.height}x600')"
             >
-                <div class="absolute bottom-0 left-0 p-4 z-10" class:description-on={hovered === work.id} class:description-off={hovered !== work.id}>
+                <div
+                    class="absolute bottom-0 left-0 p-4 z-10"
+                    class:description-on={hovered === work.slug}
+                    class:description-off={hovered !== work.slug}
+                >
                     <p class="text-lg text-white">{work.title}</p>
                 </div>
             </div>
