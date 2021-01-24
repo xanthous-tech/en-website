@@ -13,7 +13,7 @@
 
     let hovered: null | string = null;
 
-    export let works: { slug: string; title: string; height: number; html: any }[];
+    export let works: { slug: string; title: string; height: number; cover: string }[];
 </script>
 
 <svelte:head>
@@ -36,9 +36,10 @@
                 <div
                     on:mouseleave={() => (hovered = null)}
                     on:mouseenter={() => (hovered = work.slug)}
-                    class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer"
-                    style="height: {work.height}px; background-image: url('https://source.unsplash.com/random/{work.height}x600')"
+                    class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer overflow-hidden"
                 >
+                    <img class="w-full" alt="cover image" src={work.cover} />
+
                     <div
                         class="absolute bottom-0 left-0 p-4 z-10"
                         class:description-on={hovered === work.slug}
