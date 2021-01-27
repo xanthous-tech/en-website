@@ -10,7 +10,6 @@ import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
 import config from "sapper/config/rollup.js";
 import tailwind from "tailwindcss";
-import css from "rollup-plugin-css-only";
 
 import pkg from "./package.json";
 
