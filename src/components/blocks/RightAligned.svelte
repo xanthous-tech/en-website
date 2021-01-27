@@ -9,7 +9,7 @@
 <div class="container mx-auto">
     <div class="grid gap-24 grid-cols-1 lg:grid-cols-2">
         <div class="w-full flex flex-col justify-center">
-            <h3 class="text-robots-lightblue text-left leading-tight font-bold">{title}</h3>
+            <h3 class="text-2xl text-left leading-tight font-bold">{title}</h3>
             <p class="mt-8 text-lg text-robots-slate lg:max-w-md">{description}</p>
         </div>
 

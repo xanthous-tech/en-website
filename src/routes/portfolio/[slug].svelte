@@ -25,7 +25,7 @@
 </Section>
 
 {#each post.sections as section}
-    <Section spacey={true}>
+    <Section spacey={true} bg={section.props.background}>
         <svelte:component this={section.component} {...section.props} />
     </Section>
 {/each}
