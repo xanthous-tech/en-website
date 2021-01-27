@@ -2,7 +2,7 @@
     export function preload() {
         return this.fetch(`portfolio.json`)
             .then((r: { json: () => any }) => r.json())
-            .then((works: { slug: string; title: string; html: any; height: number }[]) => ({
+            .then((works: { slug: string; title: string; html: any }[]) => ({
                 works,
             }));
     }
@@ -31,14 +31,17 @@
 
 <Section bg="bg-white">
     <div class="gallery" style="column-gap: 1rem">
-        {#each works as work}
+        {#each works as work, i}
             <a rel="prefetch" href="portfolio/{work.slug}">
                 <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay={i * 50}
                     on:mouseleave={() => (hovered = null)}
                     on:mouseenter={() => (hovered = work.slug)}
                     class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer overflow-hidden"
                 >
-                    <img class="w-full" alt="cover image" src={work.cover} />
+                    <img class="w-full" alt="cover" src={work.cover} />
 
                     <div
                         class="absolute bottom-0 left-0 p-4 z-10"

@@ -1,4 +1,6 @@
 <script lang="ts">
+    import "../../node_modules/aos/dist/aos.css";
+
     import Nav from "../components/Nav.svelte";
     import Footer from "../components/Footer.svelte";
 

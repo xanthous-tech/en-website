@@ -17,7 +17,7 @@
     <title>{post.title}</title>
 </svelte:head>
 
-<Section>
+<Section spacey={true}>
     <div class="rounded bg-gray-800 text-white p-28">
         <h1 class="text-4xl font-bold mb-4">{post.title}</h1>
         <p class="text-lg">{post.description}</p>
@@ -25,7 +25,7 @@
 </Section>
 
 {#each post.sections as section}
-    <Section>
+    <Section spacey={true}>
         <svelte:component this={section.component} {...section.props} />
     </Section>
 {/each}
