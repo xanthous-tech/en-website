@@ -21,7 +21,7 @@ const works = [
             {
                 component: RightAligned,
                 props: {
-                    background: "bg-white",
+                    background: "bg-gray-50",
                     title: "The Architecture",
                     image: "/images/treelab-2.png",
                     description:
@@ -50,7 +50,7 @@ const works = [
             {
                 component: RightAligned,
                 props: {
-                    background: "bg-white",
+                    background: "bg-gray-50",
                     title: "The Architecture",
                     image: "/images/treelab-2.png",
                     description: "TODO",
@@ -77,7 +77,7 @@ const works = [
             {
                 component: RightAligned,
                 props: {
-                    background: "bg-white",
+                    background: "bg-gray-50",
                     title: "The Architecture",
                     image: "/images/treelab-2.png",
                     description: "TODO",
