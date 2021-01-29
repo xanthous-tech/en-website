@@ -8,6 +8,7 @@ module.exports = {
         options: {
             // Support class binding syntax
             defaultExtractor: (content) => [...(content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []), ...(content.match(/(?<=class:)[^=>\/\s]*/g) || [])],
+            safelist: ["bg-gray-50"],
         },
     },
     darkMode: false, // or 'media' or 'class'

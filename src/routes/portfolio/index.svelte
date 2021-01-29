@@ -33,29 +33,28 @@
     <div class="gallery" style="column-gap: 1rem">
         {#each works as work, i}
             <a rel="prefetch" href="portfolio/{work.slug}">
-                <div
-                    data-aos="fade-up"
-                    data-aos-duration="500"
-                    data-aos-delay={i * 50}
-                    on:mouseleave={() => (hovered = null)}
-                    on:mouseenter={() => (hovered = work.slug)}
-                    class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer overflow-hidden"
-                >
-                    <img class="w-full" alt="cover" src={work.cover} />
-
+                <div data-aos="fade-up" data-aos-duration="500" data-aos-delay={i * 50}>
                     <div
-                        class="absolute bottom-0 left-0 p-4 z-10"
-                        class:description-on={hovered === work.slug}
-                        class:description-off={hovered !== work.slug}
+                        on:mouseleave={() => (hovered = null)}
+                        on:mouseenter={() => (hovered = work.slug)}
+                        class="overlay relative inline-block rounded bg-gray-200 w-full mb-2 transition-all duration-300 transform hover:scale-95 bg-cover cursor-pointer overflow-hidden"
                     >
-                        <!--
+                        <img class="w-full" alt="cover" src={work.cover} />
+
+                        <div
+                            class="absolute bottom-0 left-0 p-4 z-10"
+                            class:description-on={hovered === work.slug}
+                            class:description-off={hovered !== work.slug}
+                        >
+                            <!--
                         we're using the non-standard `rel=prefetch` attribute to
                         tell Sapper to load the data for the page as soon as
                         the user hovers over the link or taps it, instead of
                         waiting for the 'click' event
                     -->
 
-                        <p class="text-lg text-white">{work.title}</p>
+                            <p class="text-lg text-white">{work.title}</p>
+                        </div>
                     </div>
                 </div>
             </a>
